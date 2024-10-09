@@ -1,0 +1,76 @@
+:root {
+    --current-color: hsl(48, 12%, 41%);
+    --main-width: 1440px;
+    --main-height: 500px;
+}
+
+.container {
+    width: var(--main-width);
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    width: --main-width;
+    border: 1px solid black;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    height: var(--main-height);
+}
+
+.slider {
+    height: calc(--main-height - 20);
+    width: calc(--main-width - 20);
+    position: relative;
+}
+
+.slider-slide {
+    visibility: hidden;
+    object-fit: cover;
+    position: absolute;
+}
+
+.slider-buttons {
+    position: relative;
+}
+
+.slider-button {
+    background-color: var(--current-color);
+    opacity: 0.3;
+    padding: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    border: 1px solid black;
+    z-index: 1000 !important;
+}
+
+.slider-button:hover {
+    opacity: 1;
+}
+
+.slider-button-prev {
+    position: relative;
+    padding-left: 15px;
+    top: 230px;
+    left: 10px;
+}
+
+.slider-button-next {
+    position: relative;
+    padding-left: 15px;
+    top: 190px;
+    left: 1365px;
+}
+
+.slider-slide-visible {
+    visibility: visible;
+    transition: opacity 2s linear;
+}
+
+.slider-slide-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opasity 2s linear;
+}
